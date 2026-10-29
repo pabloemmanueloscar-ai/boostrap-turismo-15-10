@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizonte Viajes - Inicio</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Bootstrap 5.3.3 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<style>
+    :root {
+      --bs-primary: #003178;
+      --bs-primary-dark: #002255;
+      --bs-primary-container: #0d47a1;
+      --bs-secondary-brand: #a73a00;
+      --bs-secondary-hover: #8f3100;
+      --bs-accent-orange: #fd651e;
+      --bs-teal-brand: #00573b;
+      --bs-teal-light: #5cd19f;
+      --bs-teal-bg: #85f8c4;
+      --surface-bg: #faf8ff;
+      --surface-container-low: #f2f3ff;
+      --surface-container: #eaedff;
+      --surface-container-high: #e2e7ff;
+      --on-surface: #131b2e;
+      --on-surface-variant: #434652;
+      --outline-variant: #e2e4ee;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--surface-bg);
+      color: var(--on-surface);
+      overflow-x: hidden;
+    }
+    .bg-brand-primary { background-color: var(--bs-primary) !important; }
+    .bg-brand-primary-container { background-color: var(--bs-primary-container) !important; }
+    .text-brand-primary { color: var(--bs-primary) !important; }
+    .bg-brand-secondary { background-color: var(--bs-secondary-brand) !important; color: #fff !important; }
+    .bg-brand-secondary:hover { background-color: var(--bs-secondary-hover) !important; }
+    .text-brand-secondary { color: var(--bs-secondary-brand) !important; }
+    .bg-brand-surface { background-color: var(--surface-bg) !important; }
+    .bg-surface-low { background-color: var(--surface-container-low) !important; }
+    .bg-surface-mid { background-color: var(--surface-container) !important; }
+    .text-surface-variant { color: var(--on-surface-variant) !important; }
+    .btn-brand-primary {
+      background-color: var(--bs-primary);
+      color: #ffffff;
+      border: none;
+    }
+    .btn-brand-primary:hover {
+      background-color: var(--bs-primary-container);
+      color: #ffffff;
+    }
+    .btn-brand-orange {
+      background-color: var(--bs-secondary-brand);
+      color: #ffffff;
+      border: none;
+    }
+    .btn-brand-orange:hover {
+      background-color: #8c2f00;
+      color: #ffffff;
+    }
+    .badge-teal {
+      background-color: #00573b;
+      color: #ffffff;
+    }
+    .badge-teal-light {
+      background-color: #e6f9f0;
+      color: #00573b;
+    }
+    .hero-banner {
+      background: linear-gradient(180deg, #002766 0%, #003178 50%, #001f4d 100%);
+      position: relative;
+    }
+    .hero-bg-overlay {
+      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzz8cj3d8Q6YuPDIZHI0zAW344uvvNYxTa5GePN4706rqrl_istVP7bRQ2CbEfssE0f9faEpCVnRbk3c69fnyoysd0Et9COts-qXHS9v-Iy3rRGjaGE8NZFF9QObmaCmueAhXLFAYWgO3jjGMY8wbak3zCJpGWuboDkHwWpjpVG6nLx6MrirjnFWApUKvHP-xyD2z9ZgWYvrTNDmrUPIWC-O90XJBKQn275R8-jHncO3KGBm-HVSGs');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22;
+      mix-blend-mode: overlay;
+    }
+    .card-pkg {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .card-pkg:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 49, 120, 0.12) !important;
+    }
+    .pkg-img-wrapper {
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pkg-img-wrapper .bg-cover {
+      transition: transform 0.4s ease;
+    }
+    .card-pkg:hover .pkg-img-wrapper .bg-cover {
+      transform: scale(1.05);
+    }
+    .step-card {
+      transition: transform 0.2s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+    }
+    .nav-pill-custom {
+      background: #ffffff;
+      color: var(--on-surface-variant);
+      border: 1px solid var(--outline-variant);
+      border-radius: 50rem;
+      padding: 0.45rem 1.1rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .nav-pill-custom:hover {
+      background: var(--surface-container-high);
+      color: var(--bs-primary);
+    }
+    .nav-pill-custom.active {
+      background: var(--bs-primary);
+      color: #ffffff;
+      border-color: var(--bs-primary);
+    }
+  </style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl sticky-top bg-white border-bottom border-light shadow-sm py-2">
+<div class="container-xl">
+<!-- Brand Logo -->
+<a class="navbar-brand d-flex items-center gap-2 align-items-center" href="#">
+<img alt="Horizonte Viajes Logo" class="object-fit-contain" height="32" src="https://lh3.googleusercontent.com/aida/AEtjO1UHoGscBhc00wb43lzKRndnByvyVlKFFwAyqZw1dF0dCuV72m58W6Fm7DOiNsgGg9lZOpl6tUwzw6hKDf_YNjAPTbvadaa7xRp7q9vFsJfP7bygCc-cQikKirbCvR8N5_bjkPcRme6Ptb1KTPRwUfkWgBTi-B6yx-Dlazsl5iX8RqlgVGBi-W7qUI52cl3E1QS4H43M4sqqTdJ7jcdPo0M0FDv5vDA261sn3C9irmoYxIyDxB5A1cLU1Og"/>
+<span class="fw-bold text-brand-primary fs-5 tracking-tight mb-0">Horizonte Viajes</span>
+</a>
+<!-- Navbar Toggler for Mobile -->
+<button aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0 shadow-none" data-bs-target="#navbarMainContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Nav Links -->
+<div class="collapse navbar-collapse" id="navbarMainContent">
+<ul class="navbar-nav me-auto mb-2 mb-xl-0 ms-xl-4 gap-xl-3">
+<li class="nav-item">
+<a class="nav-link text-surface-variant fw-semibold" href="#">Destinos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-surface-variant fw-semibold" href="#">Paquetes Populares</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-surface-variant fw-semibold" href="#">Cómo Funciona</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-surface-variant fw-semibold" href="#">Ayuda y Contacto</a>
+</li>
+</ul>
+<!-- Right Side Utility Controls -->
+<div class="d-flex align-items-center flex-wrap gap-3">
+<a class="d-none d-lg-flex align-items-center gap-2 text-decoration-none text-surface-variant" href="tel:+541140008425">
+<i class="bi bi-headset fs-4 text-brand-secondary"></i>
+<div class="d-flex flex-column lh-sm">
+<span class="text-uppercase fw-bold text-muted" style="font-size: 10px;">Atención 24/7</span>
+<span class="fw-bold text-dark" style="font-size: 13px;">+54 11 4000-8425</span>
+</div>
+</a>
+<a class="btn bg-surface-low text-brand-primary fw-semibold position-relative px-3 py-1 rounded-3 d-inline-flex align-items-center gap-2" href="#">
+<span style="font-size: 13px;">Mis Reservas</span>
+<span class="badge rounded-pill bg-brand-secondary" style="font-size: 11px;">1 Activa</span>
+</a>
+<div class="d-flex align-items-center gap-2 ps-2 border-start">
+<img alt="Profile" class="rounded-circle object-fit-cover" height="34" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpL3YYA5W3OccytLs54gDZZlsR9ae2qpB7Gl2aNW56EwzHHCTc_TQu0YMKpBxMaGOAlxbe43Z8qfrOXIrHI5gu0Chx9JaxDVLFVlduTFuQpnrbWvN82sfLpgKYJA7nMuPPzN3itb43djOguZ1dsmCmCSgD-2Was3imtDOxE4u229Tolr_5PAyV8tz1Hc3xyFWXpY7i-ADmkLU7jZSCqLtIWMC2v4ws3Dv6lLKKI7CPhCQjQiU9-QOB" width="34"/>
+<div class="d-none d-md-flex flex-column lh-1">
+<span class="fw-bold text-dark" style="font-size: 13px;">Lucía M.</span>
+<span class="text-muted" style="font-size: 11px;">Viajero Frecuente</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- MAIN -->
+<main>
+<!-- HERO SECTION WITH INTEGRATED SEARCH -->
+<section class="hero-banner py-5 py-lg-5 text-white position-relative">
+<div class="position-absolute top-0 start-0 w-100 h-100 hero-bg-overlay pointer-events-none"></div>
+<div class="container-xl position-relative z-1 py-3">
+<!-- Title & Value proposition -->
+<div class="col-lg-8 text-start mb-4">
+<div class="badge rounded-pill bg-white bg-opacity-20 text-white px-3 py-2 mb-3 fw-semibold">
+<i class="bi bi-patch-check-fill text-warning me-1"></i> SIN COSTOS OCULTOS NI SORPRESAS
+          </div>
+<h1 class="display-5 fw-extrabold text-white mb-3">
+            Viajar sin complicaciones empieza acá
+          </h1>
+<p class="lead text-white-50 fw-normal">
+            Elegí tu destino soñado con precios finales, traslados incluidos y cancelación flexible sin letra chica. Vos planéas descansar; nosotros nos ocupamos de todo lo demás.
+          </p>
+</div>
+<!-- SEARCH ENGINE CARD -->
+<div class="card shadow-lg border-0 rounded-4 p-3 p-lg-4 text-dark mb-4">
+<form class="row g-3 align-items-end" onsubmit="event.preventDefault();">
+<!-- Destino -->
+<div class="col-lg-4 position-relative">
+<label class="form-label text-uppercase text-muted fw-bold mb-1" style="font-size: 11px;">
+<i class="bi bi-geo-alt-fill text-primary me-1"></i> ¿A dónde querés ir?
+              </label>
+<div class="input-group">
+<span class="input-group-text bg-surface-low border-0"><i class="bi bi-search text-muted"></i></span>
+<input autocomplete="off" class="form-control form-control-lg bg-surface-low border-0 fw-bold fs-6" id="destInput" placeholder="Bariloche, Iguazú, Mendoza..." type="text" value="Bariloche, Patagonia"/>
+<button class="btn bg-surface-low border-0 text-muted" onclick="document.getElementById('destMenu').classList.toggle('d-none')" type="button">
+<i class="bi bi-chevron-down"></i>
+</button>
+</div>
+<!-- Quick Suggestions Dropdown Popover -->
+<div class="position-absolute start-0 end-0 top-100 mt-2 bg-white rounded-3 shadow-lg p-2 d-none z-3" id="destMenu">
+<span class="text-uppercase text-muted fw-bold px-2 py-1 d-block" style="font-size: 11px;">Destinos Populares Directos</span>
+<div class="d-flex flex-column gap-1">
+<button class="btn btn-sm btn-light text-start d-flex justify-content-between align-items-center py-2" onclick="selectDestination('Bariloche, Patagonia')" type="button">
+<span><i class="bi bi-mountain text-primary me-2"></i><strong>Bariloche, Río Negro</strong></span>
+<span class="badge text-bg-success">Vuelo Directo 2h 20m</span>
+</button>
+<button class="btn btn-sm btn-light text-start d-flex justify-content-between align-items-center py-2" onclick="selectDestination('Cataratas del Iguazú, Misiones')" type="button">
+<span><i class="bi bi-water text-primary me-2"></i><strong>Cataratas del Iguazú, Misiones</strong></span>
+<span class="badge text-bg-success">Resort + Parques</span>
+</button>
+<button class="btn btn-sm btn-light text-start d-flex justify-content-between align-items-center py-2" onclick="selectDestination('Mendoza, Cuyo')" type="button">
+<span><i class="bi bi-cup-straw text-primary me-2"></i><strong>Mendoza &amp; Ruta del Vino</strong></span>
+<span class="badge text-bg-success">Bodegas Gourmet</span>
+</button>
+<button class="btn btn-sm btn-light text-start d-flex justify-content-between align-items-center py-2" onclick="selectDestination('Salta y Jujuy, Noroeste')" type="button">
+<span><i class="bi bi-compass text-primary me-2"></i><strong>Salta y Jujuy Andino</strong></span>
+<span class="text-muted small">Quebradas &amp; Cultura</span>
+</button>
+<button class="btn btn-sm btn-light text-start d-flex justify-content-between align-items-center py-2" onclick="selectDestination('Río de Janeiro, Brasil')" type="button">
+<span><i class="bi bi-sun text-primary me-2"></i><strong>Río de Janeiro, Brasil</strong></span>
+<span class="text-muted small">Playas &amp; Pan de Azúcar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fechas -->
+<div class="col-lg-3">
+<div class="d-flex justify-content-between align-items-center mb-1">
+<label class="form-label text-uppercase text-muted fw-bold mb-0" style="font-size: 11px;">
+<i class="bi bi-calendar3 text-primary me-1"></i> Fechas de Viaje
+                </label>
+<span class="badge bg-success-subtle text-success fw-bold" style="font-size: 11px;">Flexible (+/- 3d)</span>
+</div>
+<div class="d-flex align-items-center bg-surface-low rounded-3 p-2 justify-content-between">
+<div>
+<div class="text-muted" style="font-size: 10px;">Salida - Regreso</div>
+<div class="fw-bold fs-6">12 Oct - 17 Oct</div>
+</div>
+<i class="bi bi-arrow-left-right text-muted mx-2"></i>
+<span class="badge bg-white text-brand-primary shadow-sm px-2 py-1">5 Noches</span>
+</div>
+</div>
+<!-- Pasajeros -->
+<div class="col-lg-3">
+<label class="form-label text-uppercase text-muted fw-bold mb-1" style="font-size: 11px;">
+<i class="bi bi-people-fill text-primary me-1"></i> Viajeros &amp; Hospedaje
+              </label>
+<div class="d-flex align-items-center justify-content-between bg-surface-low rounded-3 p-2">
+<div>
+<div class="fw-bold fs-6" id="passengerSummary">2 Adultos</div>
+<div class="text-muted" style="font-size: 11px;">1 Habitación Doble</div>
+</div>
+<div class="d-flex align-items-center gap-1">
+<button class="btn btn-sm btn-white bg-white rounded-circle shadow-sm fw-bold px-2 py-0" onclick="adjustPassengers(-1)" type="button">-</button>
+<span class="fw-bold px-2" id="passengerCount">2</span>
+<button class="btn btn-sm btn-white bg-white rounded-circle shadow-sm fw-bold px-2 py-0" onclick="adjustPassengers(1)" type="button">+</button>
+</div>
+</div>
+</div>
+<!-- Boton Buscar -->
+<div class="col-lg-2">
+<button class="btn btn-brand-orange btn-lg w-100 fw-bold d-flex align-items-center justify-content-center gap-2 py-2" type="submit">
+<i class="bi bi-search"></i>
+<span>Buscar</span>
+</button>
+</div>
+</form>
+<!-- Flexible Dates Strip -->
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-3 pt-3 border-top text-muted small">
+<div class="form-check mb-0">
+<input checked="" class="form-check-input" id="flexDateCheck" type="checkbox"/>
+<label class="form-check-label text-dark" for="flexDateCheck">
+                Mostrar ofertas con fechas flexibles (+/- 3 días) para ahorrar hasta un 25%
+              </label>
+</div>
+<div class="text-success fw-bold d-flex align-items-center gap-1">
+<i class="bi bi-piggy-bank-fill"></i> Mejor tarifa promedio detectada
+            </div>
+</div>
+</div>
+<!-- 3 TRUST SIGNPOST BADGES -->
+<div class="row g-3">
+<div class="col-md-4">
+<div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 backdrop-blur">
+<div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background-color: var(--bs-teal-bg); color: var(--bs-teal-brand);">
+<i class="bi bi-check-circle-fill fs-5"></i>
+</div>
+<div class="text-start">
+<div class="fw-bold text-white fs-6">Precios finales sin sorpresas</div>
+<div class="text-white-50 small">Tasas, equipaje y traslados incluidos</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 backdrop-blur">
+<div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px;">
+<i class="bi bi-headset fs-5"></i>
+</div>
+<div class="text-start">
+<div class="fw-bold text-white fs-6">Asistencia humana 24/7</div>
+<div class="text-white-50 small">Un asesor directo por WhatsApp en tu viaje</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 backdrop-blur">
+<div class="rounded-circle bg-warning-subtle text-warning-emphasis d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px;">
+<i class="bi bi-calendar2-check-fill fs-5"></i>
+</div>
+<div class="text-start">
+<div class="fw-bold text-white fs-6">Cancelación flexible</div>
+<div class="text-white-50 small">Reembolso 100% hasta 7 días antes</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CATEGORY FAST-FILTERS -->
+<section class="bg-surface-low py-3 border-bottom border-light">
+<div class="container-xl">
+<div class="d-flex align-items-center justify-content-between overflow-x-auto pb-1 gap-2">
+<div class="d-flex align-items-center gap-2">
+<a class="nav-pill-custom active d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-sliders"></i> Todos los Destinos
+            </a>
+<a class="nav-pill-custom d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-snow text-primary"></i> Montaña y Nieve
+            </a>
+<a class="nav-pill-custom d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-sun text-warning"></i> Playas Cálidas
+            </a>
+<a class="nav-pill-custom d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-luggage text-success"></i> Escapadas de Finde
+            </a>
+<a class="nav-pill-custom d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-tree text-success"></i> Naturaleza y Relax
+            </a>
+<a class="nav-pill-custom d-inline-flex align-items-center gap-1" href="#">
+<i class="bi bi-cup-hot text-danger"></i> Rutas del Vino
+            </a>
+</div>
+<div class="d-none d-xl-flex align-items-center gap-2 text-muted text-nowrap ms-3">
+<span class="text-uppercase small fw-semibold">Mostrando:</span>
+<span class="badge bg-white text-dark border fw-bold">18 Paquetes verificados</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED TRANSPARENT PACKAGES -->
+<section class="py-5 bg-brand-surface">
+<div class="container-xl">
+<!-- Section Header -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
+<div>
+<span class="text-uppercase text-brand-secondary fw-bold small letter-spacing-1">Transparencia Garantizada</span>
+<h2 class="display-6 fw-bold text-dark mt-1 mb-2">Paquetes destacados con todo lo que ves incluido</h2>
+<p class="text-muted mb-0 lead fs-6">Nada de letra pequeña al finalizar la compra. El precio indicado incluye aéreos, traslados, alojamiento verificado y excursiones oficiales.</p>
+</div>
+<div class="d-flex align-items-center gap-2">
+<span class="badge bg-success-subtle text-success p-2 rounded-2 fw-semibold">
+<i class="bi bi-shield-check me-1"></i> Pago Seguro SSL
+            </span>
+<span class="badge bg-primary-subtle text-primary p-2 rounded-2 fw-semibold">
+<i class="bi bi-credit-card me-1"></i> Hasta 6 cuotas fijas
+            </span>
+</div>
+</div>
+<!-- CARDS GRID -->
+<div class="row g-4">
+<!-- CARD 1: BARILOCHE -->
+<div class="col-md-6 col-lg-4">
+<div class="card card-pkg h-100 rounded-4 overflow-hidden bg-white shadow-sm">
+<div class="pkg-img-wrapper">
+<div class="w-100 h-100 bg-cover position-absolute top-0 start-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk80RhT_mbFAsT0-HxWb_csW2RTCDUSgTPg99qdyqcmQMQk0KRWQgOvKBt0BlEPrGzs-bB0R5YFLEY8c1h-TPWQJ6KUw4VRXOILphRh5UWsSWtpB3YA7n7Ak-eLJTKPTXAJUELPLrn07AwXfJtNdmYrxnM5ciPQ-h89BOhU6g4IxLIba9P-pzJ0e_uKhHUGEbtM9aMtlD3C9JXs_T9n-9p0iXLvrp22ZqAbIQlfYizT-idvHESHsf8'); background-size: cover; background-position: center;"></div>
+<div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 40%, rgba(0,0,0,0.7) 100%);"></div>
+<div class="position-absolute top-0 start-0 p-3">
+<span class="badge bg-white text-brand-primary fw-bold rounded-pill shadow-sm px-2 py-1">
+<i class="bi bi-airplane-fill me-1"></i> Vuelo + Hotel 4★
+                  </span>
+</div>
+<button aria-label="Favorito" class="btn btn-sm btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" type="button">
+<i class="bi bi-heart"></i>
+</button>
+<div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center text-white small">
+<span class="bg-dark bg-opacity-50 px-2 py-1 rounded backdrop-blur"><i class="bi bi-clock me-1"></i> 5 Días / 4 Noches</span>
+<span class="badge badge-teal px-2 py-1 rounded"><i class="bi bi-star-fill text-warning me-1"></i> 4.9 (184 reseñas)</span>
+</div>
+</div>
+<div class="card-body p-4 d-flex flex-column justify-content-between">
+<div>
+<div class="d-flex justify-content-between align-items-center mb-1">
+<span class="text-uppercase text-muted fw-bold" style="font-size: 11px;">Patagonia Andina</span>
+<span class="text-success fw-bold small">Salidas Semanales</span>
+</div>
+<h3 class="card-title fw-bold fs-5 text-dark">Bariloche Clásico &amp; Circuito Chico</h3>
+<!-- Qué incluye box -->
+<div class="bg-surface-low rounded-3 p-3 my-3">
+<span class="fw-bold text-uppercase d-block mb-2 text-dark" style="font-size: 11px;">
+<i class="bi bi-check2-square text-primary me-1"></i> Qué incluye este paquete:
+                    </span>
+<div class="row g-2 small text-muted">
+<div class="col-6"><i class="bi bi-airplane text-primary me-1"></i> Vuelo directo ida y vta.</div>
+<div class="col-6"><i class="bi bi-buildings text-primary me-1"></i> Hotel 4★ c/ desayuno</div>
+<div class="col-6"><i class="bi bi-bus-front text-primary me-1"></i> Traslados in/out</div>
+<div class="col-6"><i class="bi bi-signpost-2 text-primary me-1"></i> Cerro Campanario</div>
+</div>
+</div>
+</div>
+<!-- Price & CTA -->
+<div class="pt-3 border-top d-flex justify-content-between align-items-end">
+<div>
+<span class="text-muted d-block" style="font-size: 11px;">Precio final por persona</span>
+<div class="d-flex align-items-baseline gap-1">
+<span class="fs-4 fw-extrabold text-dark">$385.000</span>
+<span class="small text-muted fw-semibold">ARS</span>
+</div>
+<span class="text-brand-secondary fw-bold small d-block">O 6 cuotas de $64.160 fijas</span>
+</div>
+<a class="btn btn-brand-primary fw-bold d-inline-flex align-items-center gap-1 rounded-3 px-3 py-2" href="#">
+                    Ver paquete <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: CATARATAS DEL IGUAZÚ -->
+<div class="col-md-6 col-lg-4">
+<div class="card card-pkg h-100 rounded-4 overflow-hidden bg-white shadow-sm border-2 border-warning">
+<div class="position-absolute top-0 end-0 z-2">
+<span class="badge bg-brand-secondary rounded-0 rounded-bottom-start px-3 py-2 fw-bold text-uppercase" style="font-size: 11px;">
+<i class="bi bi-fire me-1"></i> Más reservado del mes
+                </span>
+</div>
+<div class="pkg-img-wrapper">
+<div class="w-100 h-100 bg-cover position-absolute top-0 start-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBx2apYGXnZc282fZN5wISmrtjsuo-NUiru2yzQn0oA2h6ozDtXUNp5sCcJ9F9-vTnghxYxSe52SQMa1s8ATT9-vU7mbhZBpkcbzGFcFhSwooa1IXuoGfERm87y9q10HmwgzasKGrNvaNHl3iWzbElwekOa0eJgNlDYFloFl6VcA_wtS3Ww08FXpj5y9UGomHw5jgDQs4uhNYAxaeDDwQDTuIIOSU8xaDjvC1zqWYM1Hz64rt0ieW6h'); background-size: cover; background-position: center;"></div>
+<div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 40%, rgba(0,0,0,0.7) 100%);"></div>
+<div class="position-absolute top-0 start-0 p-3">
+<span class="badge bg-white text-brand-secondary fw-bold rounded-pill shadow-sm px-2 py-1">
+<i class="bi bi-tree-fill me-1"></i> Resort &amp; Selva
+                  </span>
+</div>
+<button aria-label="Favorito" class="btn btn-sm btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm d-none" type="button">
+<i class="bi bi-heart"></i>
+</button>
+<div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center text-white small">
+<span class="bg-dark bg-opacity-50 px-2 py-1 rounded backdrop-blur"><i class="bi bi-clock me-1"></i> 4 Días / 3 Noches</span>
+<span class="badge badge-teal px-2 py-1 rounded"><i class="bi bi-star-fill text-warning me-1"></i> 5.0 (312 reseñas)</span>
+</div>
+</div>
+<div class="card-body p-4 d-flex flex-column justify-content-between">
+<div>
+<div class="d-flex justify-content-between align-items-center mb-1">
+<span class="text-uppercase text-muted fw-bold" style="font-size: 11px;">Misiones &amp; Selva</span>
+<span class="text-brand-secondary fw-bold small">Cupos Limitados</span>
+</div>
+<h3 class="card-title fw-bold fs-5 text-dark">Cataratas del Iguazú Completo</h3>
+<!-- Qué incluye box -->
+<div class="bg-surface-low rounded-3 p-3 my-3">
+<span class="fw-bold text-uppercase d-block mb-2 text-dark" style="font-size: 11px;">
+<i class="bi bi-check2-square text-primary me-1"></i> Qué incluye este paquete:
+                    </span>
+<div class="row g-2 small text-muted">
+<div class="col-6"><i class="bi bi-airplane text-primary me-1"></i> Aéreos directos c/ valija</div>
+<div class="col-6"><i class="bi bi-water text-primary me-1"></i> Resort con piscina</div>
+<div class="col-6"><i class="bi bi-ticket-perforated text-primary me-1"></i> Entradas a 2 Parques</div>
+<div class="col-6"><i class="bi bi-cup-hot text-primary me-1"></i> Media Pensión buffet</div>
+</div>
+</div>
+</div>
+<!-- Price & CTA -->
+<div class="pt-3 border-top d-flex justify-content-between align-items-end">
+<div>
+<span class="text-muted d-block" style="font-size: 11px;">Precio final por persona</span>
+<div class="d-flex align-items-baseline gap-1">
+<span class="fs-4 fw-extrabold text-dark">$295.000</span>
+<span class="small text-muted fw-semibold">ARS</span>
+</div>
+<span class="text-brand-secondary fw-bold small d-block">O 6 cuotas de $49.166 fijas</span>
+</div>
+<a class="btn btn-brand-orange fw-bold d-inline-flex align-items-center gap-1 rounded-3 px-3 py-2" href="#">
+                    Ver paquete <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: MENDOZA RUTA DEL VINO -->
+<div class="col-md-6 col-lg-4">
+<div class="card card-pkg h-100 rounded-4 overflow-hidden bg-white shadow-sm">
+<div class="pkg-img-wrapper">
+<div class="w-100 h-100 bg-cover position-absolute top-0 start-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOJ6kr-6fAe6BpcuDXGdalHf48ibOutwMcyN5yG2Wl5QIOo-WIR4r3349fdvjYxcPaeMOfciVYix54Xg61wgmtjoqjEIDnoPKTyXxyBoY82i7Bg1AonGEeOeB5Nu8KGnib_oouQ_axGN7BrpZAu0gx8jyREbLiNkcVCAw7flA3osIzW8bsxzpGrrOwE3845ayFSQCkwed0f_2nZ3Jvs9iloxzdFOusr8iFYHlVRPY_0CU5bnGrfdbO'); background-size: cover; background-position: center;"></div>
+<div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 40%, rgba(0,0,0,0.7) 100%);"></div>
+<div class="position-absolute top-0 start-0 p-3">
+<span class="badge bg-white text-brand-primary fw-bold rounded-pill shadow-sm px-2 py-1">
+<i class="bi bi-cup-straw me-1"></i> Experiencia Gourmet
+                  </span>
+</div>
+<button aria-label="Favorito" class="btn btn-sm btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" type="button">
+<i class="bi bi-heart"></i>
+</button>
+<div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center text-white small">
+<span class="bg-dark bg-opacity-50 px-2 py-1 rounded backdrop-blur"><i class="bi bi-clock me-1"></i> 4 Días / 3 Noches</span>
+<span class="badge badge-teal px-2 py-1 rounded"><i class="bi bi-star-fill text-warning me-1"></i> 4.9 (98 reseñas)</span>
+</div>
+</div>
+<div class="card-body p-4 d-flex flex-column justify-content-between">
+<div>
+<div class="d-flex justify-content-between align-items-center mb-1">
+<span class="text-uppercase text-muted fw-bold" style="font-size: 11px;">Cuyo &amp; Valles</span>
+<span class="text-brand-primary fw-bold small">Salidas Diarias</span>
+</div>
+<h3 class="card-title fw-bold fs-5 text-dark">Mendoza &amp; Ruta del Vino Premium</h3>
+<!-- Qué incluye box -->
+<div class="bg-surface-low rounded-3 p-3 my-3">
+<span class="fw-bold text-uppercase d-block mb-2 text-dark" style="font-size: 11px;">
+<i class="bi bi-check2-square text-primary me-1"></i> Qué incluye este paquete:
+                    </span>
+<div class="row g-2 small text-muted">
+<div class="col-6"><i class="bi bi-airplane text-primary me-1"></i> Vuelo Aerolíneas ida y vta.</div>
+<div class="col-6"><i class="bi bi-house-door text-primary me-1"></i> Posada en Chacras de Coria</div>
+<div class="col-6"><i class="bi bi-fork-knife text-primary me-1"></i> Almuerzo maridado 5 pasos</div>
+<div class="col-6"><i class="bi bi-bus-front text-primary me-1"></i> Tour a 3 bodegas top</div>
+</div>
+</div>
+</div>
+<!-- Price & CTA -->
+<div class="pt-3 border-top d-flex justify-content-between align-items-end">
+<div>
+<span class="text-muted d-block" style="font-size: 11px;">Precio final por persona</span>
+<div class="d-flex align-items-baseline gap-1">
+<span class="fs-4 fw-extrabold text-dark">$340.000</span>
+<span class="small text-muted fw-semibold">ARS</span>
+</div>
+<span class="text-brand-secondary fw-bold small d-block">O 6 cuotas de $56.666 fijas</span>
+</div>
+<a class="btn btn-brand-primary fw-bold d-inline-flex align-items-center gap-1 rounded-3 px-3 py-2" href="#">
+                    Ver paquete <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS: 3-STEP PROCESS -->
+<section class="py-5 bg-surface-low border-top border-bottom border-light">
+<div class="container-xl">
+<div class="text-center col-lg-8 mx-auto mb-5">
+<span class="text-uppercase text-brand-primary fw-bold small">Cero Estrés, 100% Claridad</span>
+<h2 class="display-6 fw-bold text-dark mt-1">Cómo funciona nuestro sistema simple</h2>
+<p class="text-muted lead fs-6">Eliminamos los formularios interminables y las llamadas de confirmación confusas.</p>
+</div>
+<div class="row g-4">
+<!-- STEP 1 -->
+<div class="col-md-4">
+<div class="card step-card h-100 p-4 border-0 rounded-4 shadow-sm bg-white">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<span class="badge rounded-circle bg-brand-primary fs-5 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">1</span>
+<i class="bi bi-compass fs-2 text-primary opacity-50"></i>
+</div>
+<h3 class="fw-bold fs-5 text-dark mb-2">Elegí tu paquete con todo incluido</h3>
+<p class="text-muted small">Explorá itinerarios armados por especialistas con pasajes, traslados, seguro médico y hoteles pre-aprobados con precios definitivos desde el primer clic.</p>
+<div class="mt-auto pt-2 text-success small fw-bold">
+<i class="bi bi-eye-fill me-1"></i> Sin costos ocultos al avanzar
+              </div>
+</div>
+</div>
+<!-- STEP 2 -->
+<div class="col-md-4">
+<div class="card step-card h-100 p-4 border-0 rounded-4 shadow-sm bg-white">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<span class="badge rounded-circle bg-brand-secondary fs-5 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">2</span>
+<i class="bi bi-person-badge fs-2 text-warning-emphasis opacity-50"></i>
+</div>
+<h3 class="fw-bold fs-5 text-dark mb-2">Completá tus datos en 2 minutos</h3>
+<p class="text-muted small">Solo necesitás nombre, DNI y medio de pago preferido. Podés abonar con tarjeta en hasta 12 cuotas fijas o transferencia bancaria con descuento especial.</p>
+<div class="mt-auto pt-2 text-success small fw-bold">
+<i class="bi bi-shield-lock-fill me-1"></i> Encriptación bancaria de extremo a extremo
+              </div>
+</div>
+</div>
+<!-- STEP 3 -->
+<div class="col-md-4">
+<div class="card step-card h-100 p-4 border-0 rounded-4 shadow-sm bg-white">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<span class="badge rounded-circle badge-teal fs-5 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">3</span>
+<i class="bi bi-ticket-perforated fs-2 text-success opacity-50"></i>
+</div>
+<h3 class="fw-bold fs-5 text-dark mb-2">Recibí tu voucher y viajá tranquilo</h3>
+<p class="text-muted small">Confirmación inmediata en tu email y WhatsApp con itinerario completo, boarding passes y los contactos de tus guías locales asignados.</p>
+<div class="mt-auto pt-2 text-success small fw-bold">
+<i class="bi bi-qr-code me-1"></i> Código QR de acceso directo
+              </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- REAL TESTIMONIALS & PEACE OF MIND -->
+<section class="py-5 bg-brand-surface">
+<div class="container-xl">
+<div class="text-start col-lg-8 mb-5">
+<span class="text-uppercase text-success fw-bold small">Opiniones Verificadas</span>
+<h2 class="display-6 fw-bold text-dark mt-1">Lo que dicen quienes ya dejaron de complicarse</h2>
+<p class="text-muted lead fs-6">Más de 14.000 viajeros argentinos eligieron reservar con total transparencia este año.</p>
+</div>
+<!-- Reviews Row -->
+<div class="row g-4 mb-5">
+<!-- Review 1 -->
+<div class="col-md-4">
+<div class="card h-100 p-4 border-0 rounded-4 shadow-sm bg-white d-flex flex-column justify-content-between">
+<div>
+<div class="text-warning mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-dark fs-6 mb-4">
+                  "En otras webs siempre me cobraban extras por equipaje o tasas que aparecían a último momento. Acá pagué exactamente lo que decía el buscador y nos esperaron en el aeropuerto con un cartel. Impecable servicio."
+                </p>
+</div>
+<div class="d-flex align-items-center gap-3 pt-3 border-top">
+<img alt="Agustina Gómez" class="rounded-circle object-fit-cover" height="46" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBuAilLpht5W8W8rzGwyRPtypnLEtnZ1lAJoZHRB7LkMvgC5tTOi2YGJamHJAF8flb6lzI0FdAuq2fBIlA6cJAL5hy2266vkgWBqfosNvxIXczcoxYum2YG_q0dSt3h-EYgNvrsiPn9TndrzHtBT6ZQMXiCTX39bAWD1ZqTUI97JTrfAC4ypr-TVcpOhy3REqutRMVMucJ26Ux16EQMAL1V59VVooCXQTOjqbY6j-dJB9mskU1_AnP" width="46"/>
+<div>
+<div class="fw-bold text-dark">Agustina Gómez</div>
+<div class="text-muted small">Viajó a Bariloche en Pareja</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="col-md-4">
+<div class="card h-100 p-4 border-0 rounded-4 shadow-sm bg-white d-flex flex-column justify-content-between">
+<div>
+<div class="text-warning mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-dark fs-6 mb-4">
+                  "Hice la reserva en 5 minutos desde el celular. Tuvimos una duda con el horario del vuelo y Mariano por WhatsApp nos respondió a las 11 de la noche con una calidez humana que ya no existe en internet."
+                </p>
+</div>
+<div class="d-flex align-items-center gap-3 pt-3 border-top">
+<img alt="Martín pablo emmanuel" class="rounded-circle object-fit-cover" height="46" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6rdRkEjvF1GiKrntCe9UZYBugsKmQuaCR9WbV8-f1vdaqaGP4bXTO5YHT3zvuX50cGW2b043OO7pbb2XNnxnucNeE2iQgeO2mgEd1rLywLGELdX78ZF22pGRTPdlOaO26_0E0mhT8odBPGAozDZKt2D0A63siP2IrV-RubmTPJ2xLGFCQvIU79Ly81IQ3GPNA4jDUz6pJWyVaCKK-B2iv2PQn7YBHn0rmlXD0vhGPT7SxMzkRfTgo" width="46"/>
+<div>
+<div class="fw-bold text-dark">Martín Pablo emmanuel</div>
+<div class="text-muted small">Viajó a Cataratas en Familia</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="col-md-4">
+<div class="card h-100 p-4 border-0 rounded-4 shadow-sm bg-white d-flex flex-column justify-content-between">
+<div>
+<div class="text-warning mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-dark fs-6 mb-4">
+                  "El plan de cuotas fijas fue la clave. El voucher llegó a mi casilla inmediatamente con los códigos QR listos para mostrar desde el teléfono en el hotel y las bodegas. Cero papeles, cero dudas."
+                </p>
+</div>
+<div class="d-flex align-items-center gap-3 pt-3 border-top">
+<img alt="Sofía Vignolo" class="rounded-circle object-fit-cover" height="46" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2MtPlpUIKzGAofD2eTIs8iQroim3s0EA8BD-AyAv2VXgRFWmiJ2Zhmtbkme4SCSDLkft1prRU3leyUqTUWMFfUD4XGvuMC7chOfRoKQeaD7hB28c6agwLgKrWtOAvX2s_0pXYYNc8piQFJoLVbuFA77GFTJy6LpHe0LF-EeCCTamE9TpArhxE7Sxg_aFex89E6HN2phXDOki9QB68MkSABZRm9HXi5lBrKl0Ng-Z6rh9igckeu8_z" width="46"/>
+<div>
+<div class="fw-bold text-dark">Sofía Vignolo</div>
+<div class="text-muted small">Viajó a Mendoza con Amigos</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HUMAN SUPPORT CALLOUT -->
+<div class="card border-0 rounded-4 p-4 p-lg-5 text-white shadow-lg" style="background: linear-gradient(90deg, #003178 0%, #0d47a1 100%);">
+<div class="row align-items-center g-4">
+<div class="col-lg-8">
+<div class="d-flex align-items-center gap-3">
+<div class="rounded-circle bg-white bg-opacity-15 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 58px; height: 58px;">
+<i class="bi bi-chat-dots-fill fs-2 text-warning"></i>
+</div>
+<div>
+<span class="badge rounded-pill bg-success text-white small text-uppercase mb-2">
+<span aria-hidden="true" class="spinner-grow spinner-grow-sm me-1" role="status"></span> Asesores Online
+                  </span>
+<h3 class="fw-bold fs-4 mb-1">¿Dudas con las fechas, vuelos o medios de pago?</h3>
+<p class="text-white-50 mb-0 small">Chateá con un asesor experto en menos de 1 minuto. Te armamos el itinerario a medida sin costo adicional.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 d-flex flex-column flex-sm-row gap-2 justify-content-lg-end">
+<a class="btn btn-light fw-bold text-success d-inline-flex align-items-center justify-content-center gap-2 py-2 px-3 rounded-3 shadow-sm" href="https://wa.me/541140008425" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-whatsapp fs-5"></i> Chatear por WhatsApp
+              </a>
+<a class="btn btn-outline-light fw-semibold d-inline-flex align-items-center justify-content-center gap-2 py-2 px-3 rounded-3" href="tel:+541140008425">
+<i class="bi bi-telephone-fill"></i> Llamar Gratis
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-white border-top py-5 text-dark">
+<div class="container-xl">
+<div class="row g-4 pb-4 border-bottom">
+<!-- Col 1: Brand & Certifications -->
+<div class="col-lg-4 col-md-6">
+<div class="d-flex align-items-center gap-2 mb-3">
+<img alt="Horizonte Viajes Logo" class="object-fit-contain" height="28" src="https://lh3.googleusercontent.com/aida/AEtjO1UHoGscBhc00wb43lzKRndnByvyVlKFFwAyqZw1dF0dCuV72m58W6Fm7DOiNsgGg9lZOpl6tUwzw6hKDf_YNjAPTbvadaa7xRp7q9vFsJfP7bygCc-cQikKirbCvR8N5_bjkPcRme6Ptb1KTPRwUfkWgBTi-B6yx-Dlazsl5iX8RqlgVGBi-W7qUI52cl3E1QS4H43M4sqqTdJ7jcdPo0M0FDv5vDA261sn3C9irmoYxIyDxB5A1cLU1Og"/>
+<span class="fw-bold fs-5 text-brand-primary">Horizonte Viajes</span>
+</div>
+<p class="text-muted small">Hacemos que tus viajes sean simples, transparentes y libres de estrés. Reservas seguras con confirmación inmediata.</p>
+<div class="mt-3">
+<span class="text-uppercase text-muted fw-bold d-block mb-2" style="font-size: 10px;">Certificaciones y Confianza</span>
+<div class="d-flex flex-wrap gap-2">
+<span class="badge bg-light text-success border"><i class="bi bi-shield-fill-check me-1"></i>Turismo Seguro</span>
+<span class="badge bg-light text-primary border"><i class="bi bi-airplane-engines me-1"></i>IATA Partner</span>
+<span class="badge bg-light text-muted border"><i class="bi bi-lock-fill me-1"></i>SSL 256-bit</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Ayuda & Soporte -->
+<div class="col-lg-2 col-md-6">
+<h4 class="fw-bold fs-6 mb-3">Ayuda &amp; Soporte</h4>
+<ul class="list-unstyled d-flex flex-column gap-2 small">
+<li><a class="text-decoration-none text-muted" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-decoration-none text-muted" href="#">Política de Cancelación Flexible</a></li>
+<li><a class="text-decoration-none text-muted" href="#">Asistencia al Viajero</a></li>
+<li><a class="text-decoration-none text-muted" href="#">Términos y Condiciones</a></li>
+<li><a class="text-decoration-none text-muted" href="#">Garantía de Mejor Precio</a></li>
+</ul>
+</div>
+<!-- Col 3: Medios de Pago Seguros -->
+<div class="col-lg-3 col-md-6">
+<h4 class="fw-bold fs-6 mb-3">Medios de Pago Seguros</h4>
+<p class="text-muted small mb-2">Aboná en hasta 12 cuotas sin interés con las principales tarjetas bancarias y billeteras virtuales.</p>
+<div class="d-flex flex-wrap gap-2 mb-2">
+<span class="badge bg-light text-dark border px-2 py-1">Visa</span>
+<span class="badge bg-light text-dark border px-2 py-1">Mastercard</span>
+<span class="badge bg-light text-dark border px-2 py-1">American Express</span>
+<span class="badge bg-light text-dark border px-2 py-1">Transferencia</span>
+</div>
+<div class="text-success small d-flex align-items-center gap-1">
+<i class="bi bi-check-circle-fill"></i> Transacciones encriptadas de extremo a extremo
+          </div>
+</div>
+<!-- Col 4: Redes & Registro Legal -->
+<div class="col-lg-3 col-md-6">
+<h4 class="fw-bold fs-6 mb-3">Conectate con Nosotros</h4>
+<p class="text-muted small mb-3">Seguinos para enterarte de ofertas relámpago, nuevos paquetes y novedades de viaje.</p>
+<div class="d-flex gap-2 mb-3">
+<a aria-label="Web" class="btn btn-sm btn-light rounded-circle shadow-sm" href="#"><i class="bi bi-globe"></i></a>
+<a aria-label="Comunidad" class="btn btn-sm btn-light rounded-circle shadow-sm" href="#"><i class="bi bi-chat-quote"></i></a>
+<a aria-label="Instagram" class="btn btn-sm btn-light rounded-circle shadow-sm" href="#"><i class="bi bi-instagram"></i></a>
+<a aria-label="Email" class="btn btn-sm btn-light rounded-circle shadow-sm" href="#"><i class="bi bi-envelope"></i></a>
+</div>
+<div class="text-muted" style="font-size: 11px;">
+<div>Legajo EVT Nº 18.420 / Res. 342</div>
+<div>Ministerio de Turismo de la Nación</div>
+</div>
+</div>
+</div>
+<!-- Bottom Credits -->
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-3 text-muted small gap-2">
+<div>© 2025 Horizonte Viajes S.A. Todos los derechos reservados.</div>
+<div class="d-flex gap-3">
+<a class="text-decoration-none text-muted" href="#">Privacidad</a>
+<a class="text-decoration-none text-muted" href="#">Términos de Servicio</a>
+<a class="text-decoration-none text-muted" href="#">Defensa del Consumidor</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Interactive Controls Logic -->
+<script>
+    function selectDestination(name) {
+      const input = document.getElementById('destInput');
+      if (input) input.value = name;
+      const menu = document.getElementById('destMenu');
+      if (menu) menu.classList.add('d-none');
+    }
+
+    let currentPassengers = 2;
+    function adjustPassengers(delta) {
+      currentPassengers = Math.max(1, Math.min(8, currentPassengers + delta));
+      const counter = document.getElementById('passengerCount');
+      const summary = document.getElementById('passengerSummary');
+      if (counter) counter.innerText = currentPassengers;
+      if (summary) {
+        summary.innerText = currentPassengers === 1 ? '1 Adulto' : `${currentPassengers} Adultos`;
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      const destMenu = document.getElementById('destMenu');
+      const destInput = document.getElementById('destInput');
+      if (destMenu && !destMenu.contains(e.target) && e.target !== destInput) {
+        destMenu.classList.add('d-none');
+      }
+    });
+  </script>
+</body></html>
